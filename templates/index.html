@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Leitor de Eleitores</title>
+</head>
+<body>
+    <h1>Importar lista de eleitores</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Enviar</button>
+    </form>
+    <h2>Pesquisar</h2>
+    <form method="get" action="/">
+        <input type="text" name="q" placeholder="Buscar por nome ou CNF" value="{{ request.args.get('q','') }}">
+        <button type="submit">Buscar</button>
+    </form>
+    {% if rows %}
+    <h2>Resultados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CNF</th>
+                <th>Nome</th>
+                <th>Comparecimento</th>
+                <th>Local</th>
+                <th>Urna</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in rows %}
+            <tr>
+                <td>{{ r[0] }}</td>
+                <td>{{ r[1] }}</td>
+                <td>{{ r[2] }}</td>
+                <td>{{ r[3] }}</td>
+                <td>{{ r[4] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
