@@ -1,0 +1,6 @@
+{
+  "name": "DASHBOARD_PED_2025",
+  "description": "Ferramenta de análise dos eleitores petistas do pleito deste ano.\n\nA ideia é medir o comparecimento nas mais variadas urnas.\n\nDepois disponibilizar esse dados para interagir com esses eleitores.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
